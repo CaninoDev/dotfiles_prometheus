@@ -1,0 +1,43 @@
+# Set XDG environment variables
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_RUNTIME_DIR="$HOME/.local/run"
+
+# Set Rust environment variables
+export CARGO_HOME="$XDG_DATA_HOME/rust/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rust/multirust"
+
+# Set Node Version Manager (nvm) environment variables
+export NVM_DIR="$XDG_DATA_HOME/nvm"
+export NVM_SYMLINK_CURRENT=true
+
+# Set Ruby Version Manager (rvm) environment variables
+export RVM_DIR="$XDG_DATA_HOME/rvm"
+
+# Set the properties file for Jetbrain's products
+export IDEA_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/idea.properties"
+
+# Set the default editor
+export EDITOR="/usr/local/bin/nvim"
+
+# Set the fzf install base
+export FZF_BASE="$XDG_DATA_HOME/fzf"
+
+# Set the gnupg home
+export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
+
+# Let oh-my-zsh's tmux's plugin that the config file is stored elsewhere
+export ZSH_TMUX_CONFIG="$XDG_CONFIG_HOME/tmux/tmux.conf"
+
+# Set up tmux to autostart on login if not an embedded terminal;
+# Don't forget to inform JetBrains and VSCode to load this environment variable
+if [[ "$EMBEDDED_TERMINAL" = true ]]; then
+	export ZSH_TMUX_AUTOSTART=false
+else
+	export ZSH_TMUX_AUTOSTART=false
+fi
+
+# Set zsh's vi-mode timeout to be shorter
+export KEYTIMEOUT=1
